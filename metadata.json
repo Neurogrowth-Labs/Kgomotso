@@ -1,0 +1,6 @@
+{
+  "name": "Girls Talk",
+  "description": "An empowering platform for women to Grow, Lead & Thrive, founded by Kgomotso Khalo. Heal, grow, thrive, and give back through community and transformative workshops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

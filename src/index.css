@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-brand-deep: #3B0764; /* Deep Purple / brand colour */
+  --color-brand-lilac: #D8B4FE; /* Soft Lilac */
+  --color-brand-gold: #C5A880; /* Champagne Gold */
+  --color-brand-bg: #FCF9F2; /* Warm Ivory or Cream */
+  --color-brand-text: #2E2528; /* Charcoal Grey */
+  --color-brand-plum: #4C1D95; /* Deep purple alternative */
+  --color-brand-warm-rose: #FFF1F2; /* Rose accent */
+}
+
+/* Custom scrollbar and subtle transitions */
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #F3E8FF;
+  color: #3B0764;
+}
+
+/* Custom fade-in and slide animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print Styles for beautiful physical copies */
+@media print {
+  body {
+    background: white !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide interactive, scrolling and decorative items */
+  nav, 
+  footer, 
+  button, 
+  .no-print, 
+  .scroll-top-btn, 
+  [role="tablist"], 
+  .newsletter-section,
+  .share-btn,
+  .back-btn-container,
+  input,
+  textarea {
+    display: none !important;
+  }
+
+  /* Content containers layout correction */
+  .max-w-4xl, .max-w-7xl, .max-w-2xl, .max-w-md, .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Typography styling for physical ink readability */
+  h1 {
+    font-size: 24pt !important;
+    margin-bottom: 12pt !important;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    margin-top: 18pt !important;
+    margin-bottom: 10pt !important;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin-top: 14pt !important;
+    margin-bottom: 8pt !important;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    font-size: 11pt !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  blockquote {
+    border-left: 4px solid #6b21a8 !important; /* purple border */
+    background: #fcfaf6 !important;
+    padding: 10pt 16pt !important;
+    margin: 15pt 0 !important;
+    font-style: italic !important;
+    page-break-inside: avoid;
+  }
+
+  /* Prevent page-break hazards in core containers */
+  .grid, li, blockquote, .card {
+    page-break-inside: avoid;
+  }
+}
+
+
